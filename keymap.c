@@ -17,19 +17,19 @@
  #include QMK_KEYBOARD_H
 
  enum planck_layers { _QWERTY, _SYMB, _SYMB_SHIFT, _NAV, _FN, _NO, _MAC_QUERTY, _MAC_SYMB, _MAC_SYMB_SHIFT, _MAC_NAV, _MAC_FN, _MAC_NO };
- 
+
  enum planck_keycodes { PLOVER = SAFE_RANGE, BACKLIT, EXT_PLV };
- 
+
  #define LOWER MO(_LOWER)
  #define RAISE MO(_RAISE)
- 
+
  // #define QWERTY PDF(_QWERTY)
  // #define COLEMAK PDF(_COLEMAK)
  // #define DVORAK PDF(_DVORAK)
- 
+
  /* clang-format off */
  const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
- 
+
      /* QUERTY */
      [0] = LAYOUT_planck_1x2uC(
          KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,        KC_T,   KC_Y,    KC_U,       KC_I,    KC_O,    KC_P,    KC_LBRC,
@@ -37,15 +37,15 @@
          KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,        KC_B,   KC_N,    KC_M,       KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
          MO(_FN),   KC_LCTL, KC_LGUI, KC_LALT, MO(_SYMB),   KC_SPC,          MO(_NAV),   KC_BSPC, KC_ENT,  KC_RCTL, MO(_FN)
      ),
- 
+
      /* Symbols */
      [_SYMB] = LAYOUT_planck_1x2uC(
-         KC_ESC,            KC_EXLM, KC_P7,   KC_P8,   KC_P9,   KC_NO,          LSFT(KC_EQL),  KC_AMPR,        KC_EQL,        KC_NUBS,         KC_RPRN,       LSFT(KC_MINS),
-         KC_TAB,            KC_HASH, KC_P4,   KC_P5,   KC_P6,   LSFT(KC_RBRC),  RALT(KC_2),    KC_ASTR,        RALT(KC_8),    RALT(KC_7),      KC_AT,         KC_NUHS,
-         MO(_SYMB_SHIFT),   KC_P0,   KC_P1,   KC_P2,   KC_P3,   RALT(KC_4),     KC_NO,         KC_PERC,        RALT(KC_RBRC), LSFT(KC_NUHS),   KC_MINS,       MO(_SYMB_SHIFT),
+         KC_ESC,            KC_EXLM, KC_7,    KC_8,    KC_9,    KC_NO,          LSFT(KC_EQL),  KC_AMPR,        KC_EQL,        KC_NUBS,         KC_RPRN,       LSFT(KC_MINS),
+         KC_TAB,            KC_HASH, KC_4,    KC_5,    KC_6,    LSFT(KC_RBRC),  RALT(KC_2),    KC_ASTR,        RALT(KC_8),    RALT(KC_7),      KC_AT,         KC_NUHS,
+         MO(_SYMB_SHIFT),   KC_0,    KC_1,    KC_2,    KC_3,    RALT(KC_4),     KC_NO,         KC_PERC,        RALT(KC_RBRC), LSFT(KC_NUHS),   KC_MINS,       MO(_SYMB_SHIFT),
          KC_NO,             KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_SPC,                        KC_NO,          KC_DEL,        KC_NO,           KC_NO,         KC_NO
      ),
- 
+
      /* Symbols SHIFTED */
      [_SYMB_SHIFT] = LAYOUT_planck_1x2uC(
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   RALT(KC_EQL), KC_TRNS, KC_GRV,     LSFT(KC_NUBS), KC_TRNS, KC_TRNS,
@@ -53,7 +53,7 @@
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,      KC_TRNS, KC_TRNS,    KC_TRNS,       KC_TRNS, KC_TRNS,
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                 KC_TRNS, KC_TRNS,    LSFT(KC_DEL),  KC_TRNS, KC_TRNS
      ),
- 
+
      /* Mouse and arrow keys */
      [_NAV] = LAYOUT_planck_1x2uC(
          KC_ESC,  KC_BTN5, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,   KC_NO,   KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_PAUS,
@@ -61,7 +61,7 @@
          KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_WH_L, KC_WH_R,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
          KC_NO,   KC_LCTL, KC_LGUI, KC_LALT, KC_NO,   KC_SPC,             KC_TRNS, KC_BSPC, KC_ENT,  KC_RCTL, KC_NO
      ),
- 
+
      /* Function keys */
      [_FN] = LAYOUT_planck_1x2uC(
          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,            KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
@@ -69,7 +69,7 @@
          KC_LSFT, KC_NO,   KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
          KC_TRNS, KC_LCTL, KC_LGUI, KC_LALT, KC_NO,   TG(_MAC_QUERTY),           KC_NO,   KC_BSPC, KC_ENT,  KC_RCTL, KC_TRNS
      ),
- 
+
      /* Empty */
      [_NO] = LAYOUT_planck_1x2uC(
          KC_ESC,  RGB_TOG, RGB_M_P, KC_NO,    KC_NO,    KC_NO,   KC_NO,   RGB_VAI, RGB_HUI, RGB_SAI,  RGB_SPI,  RGB_MOD,
@@ -77,7 +77,7 @@
          KC_LSFT, RGB_M_K, RGB_M_X, RGB_M_G,  RGB_M_T,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    KC_NO,    KC_RSFT,
          KC_TRNS, KC_LCTL, KC_LGUI, KC_LALT,  KC_TRNS,  KC_NO,            KC_NO,   KC_BSPC, KC_ENT,   KC_RCTL,  KC_NO
      ),
- 
+
      /* MAC QUERTY */
      [_MAC_QUERTY] = LAYOUT_planck_1x2uC(
          KC_ESC,      KC_Q,    KC_W,    KC_E,    KC_R,           KC_T,   KC_Y,    KC_U,          KC_I,    KC_O,    KC_P,    KC_LBRC,
@@ -85,15 +85,15 @@
          KC_LSFT,     KC_Z,    KC_X,    KC_C,    KC_V,           KC_B,   KC_N,    KC_M,          KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
          MO(_MAC_FN), KC_LCTL, KC_LALT, KC_LGUI, MO(_MAC_SYMB),  KC_SPC,          MO(_MAC_NAV),  KC_BSPC, KC_ENT,  KC_LGUI, MO(_MAC_FN)
      ),
- 
+
      /* MAC Symbols */
      [_MAC_SYMB] = LAYOUT_planck_1x2uC(
-         KC_ESC,               KC_EXLM, KC_P7,   KC_P8,   KC_P9,   KC_NO,          LSFT(KC_EQL),  KC_AMPR, LSFT(RALT(KC_7)), KC_NUBS,           KC_RPRN, LSFT(KC_MINS),
-         KC_TAB,               KC_HASH, KC_P4,   KC_P5,   KC_P6,   LSFT(KC_RBRC),  KC_NUHS,       KC_ASTR, RALT(KC_8),       LSFT(RALT(KC_8)),  KC_AT,   KC_GRV,
-         MO(_MAC_SYMB_SHIFT),  KC_P0,   KC_P1,   KC_P2,   KC_P3,   KC_NO,          KC_NO,         KC_PERC, RALT(KC_RBRC),    LSFT(KC_NUHS),     KC_MINS, MO(_MAC_SYMB_SHIFT),
+         KC_ESC,               KC_EXLM, KC_7,    KC_8,    KC_9,    KC_NO,          LSFT(KC_EQL),  KC_AMPR, LSFT(RALT(KC_7)), KC_NUBS,           KC_RPRN, LSFT(KC_MINS),
+         KC_TAB,               KC_HASH, KC_4,    KC_5,    KC_6,    LSFT(KC_RBRC),  KC_NUHS,       KC_ASTR, RALT(KC_8),       LSFT(RALT(KC_8)),  KC_AT,   KC_GRV,
+         MO(_MAC_SYMB_SHIFT),  KC_0,    KC_1,    KC_2,    KC_3,    KC_NO,          KC_NO,         KC_PERC, RALT(KC_RBRC),    LSFT(KC_NUHS),     KC_MINS, MO(_MAC_SYMB_SHIFT),
          KC_NO,                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SPC,                        KC_NO,   KC_DEL,           KC_NO,             KC_NO,   KC_NO
      ),
- 
+
      /* MAC Symbols SHIFTED */
      [_MAC_SYMB_SHIFT] = LAYOUT_planck_1x2uC(
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   RALT(KC_EQL), KC_TRNS, RALT(KC_7), LSFT(KC_NUBS),    KC_TRNS, KC_TRNS,
@@ -101,7 +101,7 @@
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,   KC_TRNS,      KC_TRNS, KC_TRNS,    KC_TRNS,          KC_TRNS, KC_TRNS,
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,                 KC_TRNS, KC_TRNS,    LSFT(KC_DEL),     KC_TRNS, KC_TRNS
      ),
- 
+
      /* MAC Mouse and arrow keys */
      [_MAC_NAV] = LAYOUT_planck_1x2uC(
          KC_ESC,  KC_BTN5, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_D,   KC_NO,   KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_NO,
@@ -109,7 +109,7 @@
          KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_WH_R, KC_WH_L,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
          KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_SPC,             KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_NO
      ),
- 
+
      /* MAC Function keys */
      [_MAC_FN] = LAYOUT_planck_1x2uC(
          KC_F1,   KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,         KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_F12,
@@ -117,7 +117,7 @@
          KC_LSFT, KC_BRID, KC_MUTE, KC_VOLD, KC_VOLU, KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   TG(_QWERTY),            KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
      ),
- 
+
      /* Empty */
      [_MAC_NO] = LAYOUT_planck_1x2uC(
          KC_ESC,  RGB_TOG, RGB_M_P, KC_NO,    KC_NO,    KC_NO,   KC_NO,   RGB_VAI, RGB_HUI, RGB_SAI,  RGB_SPI,  RGB_MOD,
@@ -126,7 +126,7 @@
          KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO,            KC_NO,   KC_TRNS, KC_TRNS,  KC_TRNS,  KC_NO
      )
  };
- 
+
 //  #ifdef ENCODER_MAP_ENABLE
 //  /* Rotary Encoders
 //   */
@@ -155,7 +155,7 @@
 //          ENCODER_CCW_CW(KC_SPC,  KC_ENT),
 //          ENCODER_CCW_CW(KC_DOWN, KC_UP)
 //      },
- 
+
 //      /* Adjust (Lower + Raise)
 //       *    v- (index) Clockwise / Counter Clockwise                        v- (index) Clockwise / Counter Clockwise
 //       * ,---------------------------------------------------------------------------------------.
@@ -183,18 +183,18 @@
 //  };
 //  #endif
  /* clang-format on */
- 
+
 //  #ifdef AUDIO_ENABLE
 //  float plover_song[][2]    = SONG(PLOVER_SOUND);
 //  float plover_gb_song[][2] = SONG(PLOVER_GOODBYE_SOUND);
 //  #endif
- 
+
 //  bool play_encoder_melody(uint8_t index, bool clockwise);
- 
+
 //  layer_state_t layer_state_set_user(layer_state_t state) {
 //      return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 //  }
- 
+
 //  bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 //  #ifdef ENCODER_MAP_ENABLE
 //      if (IS_ENCODEREVENT(record->event) && record->event.pressed) {
@@ -241,7 +241,7 @@
 //      }
 //      return true;
 //  }
- 
+
 //  /* clang-format off */
 //  float melody[8][2][2] = {
 //      {{440.0f, 8}, {440.0f, 24}},
@@ -254,13 +254,13 @@
 //      {{440.0f, 8}, {440.0f, 24}},
 //  };
 //  /* clang-format on */
- 
+
 //  #define JUST_MINOR_THIRD 1.2
 //  #define JUST_MAJOR_THIRD 1.25
 //  #define JUST_PERFECT_FOURTH 1.33333333
 //  #define JUST_TRITONE 1.42222222
 //  #define JUST_PERFECT_FIFTH 1.33333333
- 
+
 //  #define ET12_MINOR_SECOND 1.059463
 //  #define ET12_MAJOR_SECOND 1.122462
 //  #define ET12_MINOR_THIRD 1.189207
@@ -268,14 +268,14 @@
 //  #define ET12_PERFECT_FOURTH 1.33484
 //  #define ET12_TRITONE 1.414214
 //  #define ET12_PERFECT_FIFTH 1.498307
- 
+
 //  deferred_token tokens[8];
- 
+
 //  uint32_t reset_note(uint32_t trigger_time, void *note) {
 //      *(float*)note = 440.0f;
 //      return 0;
 //  }
- 
+
 //  bool play_encoder_melody(uint8_t index, bool clockwise) {
 //      cancel_deferred_exec(tokens[index]);
 //      if (clockwise) {
@@ -290,11 +290,11 @@
 //      tokens[index] = defer_exec(1000, reset_note, &melody[index][1][0]);
 //      return false;
 //  }
- 
+
 //  bool encoder_update_user(uint8_t index, bool clockwise) {
 //      return play_encoder_melody(index, clockwise);
 //  }
- 
+
 //  bool dip_switch_update_user(uint8_t index, bool active) {
 //      switch (index) {
 //          case 0: {
