@@ -32,18 +32,18 @@
 
      /* QUERTY */
      [0] = LAYOUT_planck_1x2uC(
-         KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,        KC_T,   KC_Y,    KC_U,       KC_I,    KC_O,    KC_P,    KC_LBRC,
-         KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,        KC_G,   KC_H,    KC_J,       KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-         KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,        KC_B,   KC_N,    KC_M,       KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-         MO(_FN),   KC_LCTL, KC_LGUI, KC_LALT, MO(_SYMB),   KC_SPC,          MO(_NAV),   KC_BSPC, KC_ENT,  KC_RCTL, MO(_FN)
+         KC_ESC,    KC_Q,    KC_W,    KC_E,    KC_R,        KC_T,     KC_Y,    KC_U,       KC_I,     KC_O,    KC_P,     KC_LBRC,
+         KC_TAB,    KC_A,    KC_S,    KC_D,    KC_F,        KC_G,     KC_H,    KC_J,       KC_K,     KC_L,    KC_SCLN,  KC_QUOT,
+         KC_LSFT,   KC_Z,    KC_X,    KC_C,    KC_V,        KC_B,     KC_N,    KC_M,       KC_COMM,  KC_DOT,  KC_SLSH,  KC_RSFT,
+         MO(_FN),   KC_LCTL, KC_LGUI, KC_LALT, MO(_SYMB),   KC_SPC,            MO(_NAV),   KC_BSPC,  KC_ENT,  KC_RCTL,   MO(_FN)
      ),
 
      /* Symbols */
      [_SYMB] = LAYOUT_planck_1x2uC(
-         KC_ESC,            KC_EXLM, KC_7,    KC_8,    KC_9,    KC_NO,          LSFT(KC_EQL),  KC_AMPR,        KC_EQL,        KC_NUBS,         KC_RPRN,       LSFT(KC_MINS),
-         KC_TAB,            KC_HASH, KC_4,    KC_5,    KC_6,    LSFT(KC_RBRC),  RALT(KC_2),    KC_ASTR,        RALT(KC_8),    RALT(KC_7),      KC_AT,         KC_NUHS,
-         MO(_SYMB_SHIFT),   KC_0,    KC_1,    KC_2,    KC_3,    RALT(KC_4),     LSFT(KC_6),    KC_PERC,        RALT(KC_RBRC), LSFT(KC_NUHS),   KC_MINS,       MO(_SYMB_SHIFT),
-         KC_NO,             KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_SPC,                        KC_NO,          KC_DEL,        KC_NO,           KC_NO,         KC_NO
+         KC_ESC,            KC_EXLM, KC_7,    KC_8,    KC_9,    KC_NO,          LSFT(KC_EQL),  KC_AMPR,    KC_EQL,        KC_NUBS,        KC_RPRN,   LSFT(KC_MINS),
+         KC_TAB,            KC_HASH, KC_4,    KC_5,    KC_6,    LSFT(KC_RBRC),  RALT(KC_2),    KC_ASTR,    RALT(KC_8),    RALT(KC_7),     KC_AT,     KC_NUHS,
+         MO(_SYMB_SHIFT),   KC_0,    KC_1,    KC_2,    KC_3,    RALT(KC_4),     LSFT(KC_6),    KC_PERC,    RALT(KC_RBRC), LSFT(KC_NUHS),  KC_MINS,   MO(_SYMB_SHIFT),
+         KC_NO,             KC_LCTL, KC_LGUI, KC_LALT, KC_TRNS, KC_SPC,                        KC_NO,      KC_DEL,        KC_NO,          KC_NO,     KC_NO
      ),
 
      /* Symbols SHIFTED */
@@ -56,10 +56,10 @@
 
      /* Mouse and arrow keys */
      [_NAV] = LAYOUT_planck_1x2uC(
-         KC_ESC,  KC_BTN5, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,   KC_NO,   KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_PAUS,
-         KC_TAB,  KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_NO,
-         KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_WH_L, KC_WH_R,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
-         KC_NO,   KC_LCTL, KC_LGUI, KC_LALT, KC_NO,   KC_SPC,             KC_TRNS, KC_BSPC, KC_ENT,  KC_RCTL, KC_NO
+         KC_ESC,    KC_BTN5,   KC_BTN1,   KC_MS_U,   KC_BTN2,   KC_WH_U,   KC_NO,   KC_HOME,   KC_UP,     KC_END,    KC_PGUP,   KC_PAUS,
+         KC_TAB,    KC_BTN4,   KC_MS_L,   KC_MS_D,   KC_MS_R,   KC_WH_D,   KC_NO,   KC_LEFT,   KC_DOWN,   KC_RGHT,   KC_PGDN,   KC_NO,
+         KC_LSFT,   KC_NO,     KC_NO,     KC_NO,     KC_WH_L,   KC_WH_R,   KC_NO,   KC_NO,     KC_NO,     KC_NO,     KC_NO,     KC_RSFT,
+         KC_NO,     KC_LCTL,   KC_LGUI,   KC_LALT,   KC_NO,     KC_SPC,             KC_TRNS,   KC_BSPC,   KC_ENT,    KC_RCTL,   KC_NO
      ),
 
      /* Function keys */
@@ -90,7 +90,7 @@
      [_MAC_SYMB] = LAYOUT_planck_1x2uC(
          KC_ESC,               KC_EXLM, KC_7,    KC_8,    KC_9,    KC_NO,          LSFT(KC_EQL),  KC_AMPR, LSFT(RALT(KC_7)), KC_NUBS,           KC_RPRN, LSFT(KC_MINS),
          KC_TAB,               KC_HASH, KC_4,    KC_5,    KC_6,    LSFT(KC_RBRC),  KC_NUHS,       KC_ASTR, RALT(KC_8),       LSFT(RALT(KC_8)),  KC_AT,   KC_GRV,
-         MO(_MAC_SYMB_SHIFT),  KC_0,    KC_1,    KC_2,    KC_3,    KC_NO,          LSFT(KC_6),    KC_PERC, RALT(KC_RBRC),    LSFT(KC_NUHS),     KC_MINS, MO(_MAC_SYMB_SHIFT),
+         MO(_MAC_SYMB_SHIFT),  KC_0,    KC_1,    KC_2,    KC_3,    LSFT(KC_4),     LSFT(KC_6),    KC_PERC, RALT(KC_RBRC),    LSFT(KC_NUHS),     KC_MINS, MO(_MAC_SYMB_SHIFT),
          KC_NO,                KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_SPC,                        KC_NO,   KC_DEL,           KC_NO,             KC_NO,   KC_NO
      ),
 
@@ -104,8 +104,8 @@
 
      /* MAC Mouse and arrow keys */
      [_MAC_NAV] = LAYOUT_planck_1x2uC(
-         KC_ESC,  KC_BTN5, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_D,   KC_NO,   KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_NO,
-         KC_TAB,  KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_U,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_NO,
+         KC_ESC,  KC_BTN5, KC_BTN1, KC_MS_U, KC_BTN2, KC_WH_U,   KC_NO,   KC_HOME, KC_UP,   KC_END,  KC_PGUP, KC_NO,
+         KC_TAB,  KC_BTN4, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D,   KC_NO,   KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_NO,
          KC_LSFT, KC_NO,   KC_NO,   KC_NO,   KC_WH_R, KC_WH_L,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_RSFT,
          KC_NO,   KC_TRNS, KC_TRNS, KC_TRNS, KC_NO,   KC_SPC,             KC_TRNS, KC_TRNS, KC_TRNS,  KC_TRNS, KC_NO
      ),
